@@ -1,34 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.scss'
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
+		<>
 			<Head>
 				<title>Devter</title>
 				<meta name="description" content="Devter – Social Media App for Developers" />
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/logo.png" />
 			</Head>
-
-			<main className={styles.main}>
-				<h1 className={styles.title}>Welcome to <Link href="/">Devter!</Link></h1>
-				<p><Link href="/timeline">Timeline</Link></p>
-			</main>
-
-			<footer className={styles.footer}>
-				<a
-					href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Powered by{' '}
-					<span className={styles.logo}>
-						<Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-					</span>
-				</a>
-			</footer>
-		</div>
+			<div className="wrapper">
+				<div className="homepage">
+					<img className="homepage__logo" src="/logo.png" alt="Devter Logo" />
+					<h2>Devter</h2>
+					<p>Talk about development with other developers 👩‍💻👨‍💻</p>
+					<button className="button--dark">
+						<img src="/GitHub_white.png" alt="GitHub Logo" />
+						Login with GitHub
+					</button>
+				</div>
+			</div>
+		</>
 	)
 }

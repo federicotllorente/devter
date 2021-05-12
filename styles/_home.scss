@@ -1,0 +1,36 @@
+.homepage {
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        padding: 5px 0;
+        color: $primaryColor;
+    }
+    p {
+        padding: 5px 0;
+        text-align: center;
+    }
+    button {
+        @include button_dark;
+        margin: 15px 0 0;
+        img {
+            width: 30px;
+            height: auto;
+            padding: 0 10px 0 0;
+        }
+    }
+    &__logo {
+        width: 120px;
+        height: auto;
+        padding: 0 0 15px;
+    }
+}
+
+@media (min-width: $breakpointMobileLarge) {
+    .homepage {
+        min-height: 100%;
+    }
+}
