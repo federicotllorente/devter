@@ -11,4 +11,44 @@
     border: none;
     border-radius: 9999px;
     box-shadow: 0px 0px 20px $darkColorWOpacity;
+    transition: .3s;
+    &:hover {
+        cursor: pointer;
+        background-color: $altDarkColor;
+    }
+}
+
+@mixin button_dark_alt {
+    @include button_dark;
+    background-color: transparent;
+    color: $altDarkColor;
+    border: 2px solid $altDarkColor;
+    box-shadow: 0px 0px 20px $lightColorWOpacity;
+    &:hover {
+        background-color: $altDarkColor;
+        color: $altLightColor;
+    }
+}
+
+@mixin button_light {
+    @include button_dark;
+    background-color: $lightColor;
+    color: $altDarkColor;
+    box-shadow: 0px 0px 20px $lightColorWOpacity;
+    &:hover {
+        background-color: $altDarkColor;
+        color: $altLightColor;
+    }
+}
+
+.button--dark {
+	@include button_dark;
+}
+
+.button--dark_alt {
+	@include button_dark_alt;
+}
+
+.button--light {
+	@include button_light;
 }
