@@ -1,4 +1,4 @@
-export default function Timeline({ username }) {
+const Timeline = ({ username }) => {
 	return (
 		<h1>This is the timeline of {username}</h1>
 	)
@@ -13,3 +13,5 @@ Timeline.getInitialProps = () => {
 			return { username }
 		})
 }
+
+export default Timeline

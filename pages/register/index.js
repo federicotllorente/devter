@@ -1,21 +1,21 @@
 import Link from 'next/link'
 import HeadDevter from "../../components/HeadDevter";
 
-export default function Register() {
-    function handleFormSubmit(e) {
+const Register = () => {
+    const handleFormSubmit = e => {
         e.preventDefault()
         console.log('Submitting Register Form')
     }
-    function handleUsernameChange(e) {
+    const handleUsernameChange = e => {
         console.log('Update username state')
     }
-    function handleEmailChange(e) {
+    const handleEmailChange = e => {
         console.log('Update email state')
     }
-    function handlePasswordChange(e) {
+    const handlePasswordChange = e => {
         console.log('Update password state')
     }
-    function handlePasswordRepeatChange(e) {
+    const handlePasswordRepeatChange = e => {
         console.log('Update password repetition state')
     }
 
@@ -62,3 +62,5 @@ export default function Register() {
         </>
     )
 }
+
+export default Register

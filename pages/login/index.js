@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import HeadDevter from "../../components/HeadDevter";
 
-export default function Login() {
-    function handleFormSubmit(e) {
+const Login = () => {
+    const handleFormSubmit = e => {
         e.preventDefault()
         console.log('Submitting Login Form')
     }
-    function handleEmailChange(e) {
+    const handleEmailChange = e => {
         console.log('Update email state')
     }
-    function handlePasswordChange(e) {
+    const handlePasswordChange = e => {
         console.log('Update password state')
     }
 
@@ -46,3 +46,5 @@ export default function Login() {
         </>
     )
 }
+
+export default Login

@@ -1,17 +1,22 @@
+import { useState } from 'react'
 import HeadDevter from '../components/HeadDevter'
+import { loginWithGitHub } from '../firebase/client'
 
-export default function Home() {
-	function handleLoginClick(e) {
+const Home = () => {
+	const [user, setUser] = useState(null)
+
+	const handleLoginClick = e => {
 		console.log('Go to /login')
 	}
-	function handleGitHubLoginClick(e) {
-		console.log('Login with GitHub')
+	const handleGitHubLoginClick = async e => {
+		const gitHubUser = await loginWithGitHub()
+		setUser(gitHubUser)
 	}
 
 	return (
 		<>
 			<HeadDevter>
-				<title>Devter</title>
+				<title>Devter 👩‍💻👨‍💻</title>
 			</HeadDevter>
 			<div className="wrapper">
 				<div className="homepage">
@@ -30,3 +35,5 @@ export default function Home() {
 		</>
 	)
 }
+
+export default Home
