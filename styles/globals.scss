@@ -32,7 +32,8 @@ $breakpointTabletLarge: 920px;
 $breakpointDesktop: 1024px;
 
 // Mixins
-@import '_mixins.scss';
+@import 'mixins/_buttons.scss';
+@import 'mixins/_inputs.scss';
 
 // Reset default styles
 * {
@@ -86,7 +87,7 @@ html, body {
 	}
 }
 
-@import '_home.scss';
-@import '_timeline.scss';
-@import '_login.scss';
-@import '_register.scss';
+@import 'partials/_home.scss';
+@import 'partials/_timeline.scss';
+@import 'partials/_login.scss';
+@import 'partials/_register.scss';
