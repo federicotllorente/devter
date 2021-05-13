@@ -1,0 +1,18 @@
+.register {
+    @extend .login;
+    &__logo {
+        @extend .login__logo;
+    }
+    &__form {
+        @extend .login__form;
+    }
+    &__help_links {
+        @extend .login__help_links;
+    }
+}
+
+@media (min-width: $breakpointMobileLarge) {
+    .register {
+        min-height: 100%;
+    }
+}

@@ -52,3 +52,32 @@
 .button--light {
 	@include button_light;
 }
+
+// Inputs
+
+@mixin input_dark_alt {
+    @include button_dark_alt;
+    font-weight: initial;
+    border: 2px solid $midColor;
+    &::placeholder {
+        color: $midColor;
+    }
+    &:hover {
+        cursor: unset;
+        background-color: transparent;
+        color: $altDarkColor;
+    }
+}
+
+@mixin input_light {
+    @include button_light;
+    font-weight: initial;
+    &::placeholder {
+        color: $darkColor;
+    }
+    &:hover {
+        cursor: unset;
+        background-color: $lightColor;
+        color: $darkColor;
+    }
+}

@@ -1,0 +1,31 @@
+.login {
+    @extend .homepage;
+    &__logo {
+        width: 70px;
+        height: auto;
+        padding: 0 0 15px;
+    }
+    &__form {
+        margin: 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        input {
+            @include input_dark_alt;
+            margin: 5px 0 0;
+        }
+    }
+    &__help_links {
+        padding: 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        a {
+            padding: 10px 0 0;
+        }
+    }
+}
+
+@media (min-width: $breakpointMobileLarge) {
+    .login {
+        min-height: 100%;
+    }
+}
