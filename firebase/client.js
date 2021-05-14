@@ -14,22 +14,23 @@ const firebaseConfig = {
 // firebase.default.initializeApp(firebaseConfig)
 !firebase.default.apps.length && firebase.default.initializeApp(firebaseConfig)
 
+const normalizeUser = user => {
+    const { displayName, email, photoURL } = user
+    return {
+        avatar: photoURL,
+        name: displayName,
+        email
+    }
+}
+
+export const onAuthStateChanged = onChange => {
+    return firebase.default.auth().onAuthStateChanged(user => {
+        const normalizedUser = normalizeUser(user)
+        onChange(normalizedUser)
+    })
+}
+
 export const loginWithGitHub = async () => {
     const gitHubProvider = new firebase.default.auth.GithubAuthProvider()
     return await firebase.default.auth().signInWithPopup(gitHubProvider)
-        .then(user => {
-            console.log(user)
-            const { additionalUserInfo } = user
-            const { username, profile } = additionalUserInfo
-            const { avatar_url, blog } = profile
-            return {
-                avatar: avatar_url,
-                username,
-                url: blog
-            }
-        })
-        .catch(err => {
-            console.error(err)
-            return null
-        })
 }

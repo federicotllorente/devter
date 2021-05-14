@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import HeadDevter from '../components/HeadDevter'
-import { loginWithGitHub } from '../firebase/client'
+import { onAuthStateChanged, loginWithGitHub } from '../firebase/client'
 
 const Home = () => {
 	const [user, setUser] = useState(null)
+	useEffect(() => {
+		onAuthStateChanged(setUser)
+	}, [])
 
 	const handleLoginClick = e => {
 		console.log('Go to /login')
@@ -23,13 +26,27 @@ const Home = () => {
 					<img className="homepage__logo" src="/logo.png" alt="Devter Logo" />
 					<h2>Devter</h2>
 					<p>Talk about development with other developers 👩‍💻👨‍💻</p>
-					<button className="button--dark_alt" onClick={handleLoginClick}>
-						Login with your account
-					</button>
-					<button className="button--dark" onClick={handleGitHubLoginClick}>
-						<img src="/GitHub_white.png" alt="GitHub Logo" />
-						Login with GitHub
-					</button>
+					{user ? (
+						<>
+							<img
+								src={user.avatar}
+								alt={`${user.name}'s profile picture`}
+								width="50"
+								height="50"
+							/>
+							<h2>{user.name}</h2>
+						</>
+					) : (
+						<>
+							<button className="button--dark_alt" onClick={handleLoginClick}>
+								Login with your account
+							</button>
+							<button className="button--dark" onClick={handleGitHubLoginClick}>
+								<img src="/GitHub_white.png" alt="GitHub Logo" />
+								Login with GitHub
+							</button>
+						</>
+					)}
 				</div>
 			</div>
 		</>
