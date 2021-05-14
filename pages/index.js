@@ -8,10 +8,10 @@ const Home = () => {
 		onAuthStateChanged(setUser)
 	}, [])
 
-	const handleLoginClick = e => {
+	const handleLoginClick = () => {
 		console.log('Go to /login')
 	}
-	const handleGitHubLoginClick = async e => {
+	const handleGitHubLoginClick = async () => {
 		const gitHubUser = await loginWithGitHub()
 		setUser(gitHubUser)
 	}
