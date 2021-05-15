@@ -1,21 +1,23 @@
 import Link from 'next/link'
+
 import HeadDevter from '../../components/HeadDevter'
+import Logo from '../../components/Icons/Logo'
 
 const Register = () => {
 	const handleFormSubmit = e => {
 		e.preventDefault()
 		console.log('Submitting Register Form')
 	}
-	const handleUsernameChange = e => {
+	const handleUsernameChange = () => {
 		console.log('Update username state')
 	}
-	const handleEmailChange = e => {
+	const handleEmailChange = () => {
 		console.log('Update email state')
 	}
-	const handlePasswordChange = e => {
+	const handlePasswordChange = () => {
 		console.log('Update password state')
 	}
-	const handlePasswordRepeatChange = e => {
+	const handlePasswordRepeatChange = () => {
 		console.log('Update password repetition state')
 	}
 
@@ -27,7 +29,7 @@ const Register = () => {
 			<div className="wrapper">
 				<div className="register">
 					<Link href="/">Return to Home</Link>
-					<img className="register__logo" src="/logo.png" alt="Devter Logo" />
+					<Logo fill="#0049ff" width="70" height="70" />
 					<h2>Devter</h2>
 					<p>Create your account to Devter</p>
 					<form className="register__form" onSubmit={handleFormSubmit}>

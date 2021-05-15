@@ -20,15 +20,11 @@
     }
     button {
         margin: 15px 0 0;
-        img {
-            width: 30px;
-            height: auto;
+        svg {
             padding: 0 10px 0 0;
         }
     }
-    &__logo {
-        width: 120px;
-        height: auto;
+    & > svg {
         padding: 0 0 15px;
     }
 }

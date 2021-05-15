@@ -1,15 +1,17 @@
 import Link from 'next/link'
+
 import HeadDevter from '../../components/HeadDevter'
+import Logo from '../../components/Icons/Logo'
 
 const Login = () => {
 	const handleFormSubmit = e => {
 		e.preventDefault()
 		console.log('Submitting Login Form')
 	}
-	const handleEmailChange = e => {
+	const handleEmailChange = () => {
 		console.log('Update email state')
 	}
-	const handlePasswordChange = e => {
+	const handlePasswordChange = () => {
 		console.log('Update password state')
 	}
 
@@ -21,7 +23,7 @@ const Login = () => {
 			<div className="wrapper">
 				<div className="login">
 					<Link href="/">Return to Home</Link>
-					<img className="login__logo" src="/logo.png" alt="Devter Logo" />
+					<Logo fill="#0049ff" width="70" height="70" />
 					<h2>Devter</h2>
 					<p>Login to Devter with your account</p>
 					<form className="login__form" onSubmit={handleFormSubmit}>
@@ -38,7 +40,7 @@ const Login = () => {
 						<button className="button--dark">Sign in</button>
 					</form>
 					<div className="login__help_links">
-						<Link href="/register">Don't you have an account yet? Create one now!</Link>
+						<Link href="/register">Don&apos;t you have an account yet? Create one now!</Link>
 						<a href="mailto:federicotllorente@gmail.com">Contact us</a>
 					</div>
 				</div>

@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import HeadDevter from '../components/HeadDevter'
 import { onAuthStateChanged, loginWithGitHub } from '../firebase/client'
+
+import HeadDevter from '../components/HeadDevter'
+import Logo from '../components/Icons/Logo'
+import { ButtonDark, ButtonDarkAlt } from '../components/Buttons'
 
 const Home = () => {
 	const [user, setUser] = useState(null)
@@ -23,7 +26,8 @@ const Home = () => {
 			</HeadDevter>
 			<div className="wrapper">
 				<div className="homepage">
-					<img className="homepage__logo" src="/logo.png" alt="Devter Logo" />
+					{/* <img className="homepage__logo" src="/logo.png" alt="Devter Logo" /> */}
+					<Logo fill="#0049ff" width="120" height="120" />
 					<h2>Devter</h2>
 					<p>Talk about development with other developers 👩‍💻👨‍💻</p>
 					{user ? (
@@ -38,13 +42,12 @@ const Home = () => {
 						</>
 					) : (
 						<>
-							<button className="button--dark_alt" onClick={handleLoginClick}>
+							<ButtonDarkAlt onClick={handleLoginClick}>
 								Login with your account
-							</button>
-							<button className="button--dark" onClick={handleGitHubLoginClick}>
-								<img src="/GitHub_white.png" alt="GitHub Logo" />
+							</ButtonDarkAlt>
+							<ButtonDark onClick={handleGitHubLoginClick} GitHub>
 								Login with GitHub
-							</button>
+							</ButtonDark>
 						</>
 					)}
 				</div>

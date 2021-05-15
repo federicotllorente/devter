@@ -1,8 +1,5 @@
 .register {
     @extend .login;
-    &__logo {
-        @extend .login__logo;
-    }
     &__form {
         @extend .login__form;
     }

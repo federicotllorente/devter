@@ -1,8 +1,6 @@
 .login {
     @extend .homepage;
-    &__logo {
-        width: 70px;
-        height: auto;
+    svg {
         padding: 0 0 15px;
     }
     &__form {

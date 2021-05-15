@@ -25,7 +25,7 @@ const normalizeUser = user => {
 
 export const onAuthStateChanged = onChange => {
 	return firebase.default.auth().onAuthStateChanged(user => {
-		const normalizedUser = normalizeUser(user)
+		const normalizedUser = user ? normalizeUser(user) : null
 		onChange(normalizedUser)
 	})
 }
