@@ -62,6 +62,40 @@ html, body {
 	background-color: $altLightColor;
 }
 
+.index {
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        padding: 5px 0;
+        color: $primaryColor;
+    }
+    p {
+        padding: 5px 0;
+        text-align: center;
+    }
+    a {
+        margin: 0 0 20px;
+        font-weight: 500;
+        color: $midColor;
+    }
+    button {
+        margin: 15px 0 0;
+        svg {
+            padding: 0 10px 0 0;
+        }
+    }
+    > svg {
+        padding: 0 0 15px;
+    }
+	.avatar {
+		padding: 15px 0 0;
+	}
+}
+
 @media (min-width: $breakpointMobileLarge) {
 	body {
 		min-height: 100vh;
@@ -88,9 +122,13 @@ html, body {
 			display: none;
 		}
 	}
+	.index {
+        min-height: 100%;
+    }
 }
 
 @import 'partials/_home.scss';
+@import 'partials/_avatar.scss';
 @import 'partials/_timeline.scss';
 @import 'partials/_login.scss';
 @import 'partials/_register.scss';

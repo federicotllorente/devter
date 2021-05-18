@@ -30,7 +30,8 @@ export const onAuthStateChanged = onChange => {
 	})
 }
 
-export const loginWithGitHub = async () => {
+export const loginWithGitHub = () => {
 	const gitHubProvider = new firebase.default.auth.GithubAuthProvider()
-	return await firebase.default.auth().signInWithPopup(gitHubProvider)
+	const user = firebase.default.auth().signInWithPopup(gitHubProvider)
+	return normalizeUser(user)
 }

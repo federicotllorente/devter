@@ -1,0 +1,13 @@
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        border-radius: 9999px;
+    }
+    img + h2 {
+        padding: 0 0 0 10px;
+        color: $darkColor;
+        font-size: $mobileFontSize;
+    }
+}

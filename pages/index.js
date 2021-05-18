@@ -4,6 +4,7 @@ import { onAuthStateChanged, loginWithGitHub } from '../firebase/client'
 import HeadDevter from '../components/HeadDevter'
 import Logo from '../components/Icons/Logo'
 import { ButtonDark, ButtonDarkAlt } from '../components/Buttons'
+import Avatar from '../components/Avatar'
 
 const Home = () => {
 	const [user, setUser] = useState(null)
@@ -25,22 +26,12 @@ const Home = () => {
 				<title>Devter 👩‍💻👨‍💻</title>
 			</HeadDevter>
 			<div className="wrapper">
-				<div className="homepage">
+				<div className="index">
 					{/* <img className="homepage__logo" src="/logo.png" alt="Devter Logo" /> */}
 					<Logo fill="#0049ff" width="120" height="120" />
 					<h2>Devter</h2>
 					<p>Talk about development with other developers 👩‍💻👨‍💻</p>
-					{user ? (
-						<>
-							<img
-								src={user.avatar}
-								alt={`${user.name}'s profile picture`}
-								width="50"
-								height="50"
-							/>
-							<h2>{user.name}</h2>
-						</>
-					) : (
+					{user == null ? (
 						<>
 							<ButtonDarkAlt onClick={handleLoginClick}>
 								Login with your account
@@ -49,6 +40,11 @@ const Home = () => {
 								Login with GitHub
 							</ButtonDark>
 						</>
+					) : (
+						<Avatar
+							userName={user.name} avatarURL={user.avatar}
+							avatarWidth="50" avatarHeight="50"
+						/>
 					)}
 				</div>
 			</div>
