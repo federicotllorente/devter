@@ -1,0 +1,14 @@
+header {
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: $altLightColor;
+    box-shadow: 0px 0px 20px $darkColorWOpacity;
+    h2 {
+        padding: 0 0 0 15px;
+    }
+}
