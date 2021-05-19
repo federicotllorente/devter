@@ -40,3 +40,12 @@ nav {
         }
     }
 }
+
+@media (min-width: $breakpointMobileLarge) {
+    nav {
+        width: inherit;
+        margin: 755px 0 0;
+        bottom: unset;
+        border-radius: 0 0 10px 10px;
+    }
+}
