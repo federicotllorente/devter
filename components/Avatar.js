@@ -1,12 +1,17 @@
-const Avatar = ({ userName, avatarURL, avatarWidth, avatarHeight }) => (
+const Avatar = ({ name, username, avatarURL, avatarWidth, avatarHeight }) => (
     <div className="avatar">
         <img
             src={avatarURL}
-            alt={`${userName}'s profile picture`}
+            alt={username ? `${username}'s profile picture` : 'Profile picture'}
             width={avatarWidth}
             height={avatarHeight}
         />
-        {userName && (<h2>{userName}</h2>)}
+        {username && (
+            <div>
+                <h2>{name || username}</h2>
+                <h3>@{username}</h3>
+            </div>
+        )}
     </div>
 )
 

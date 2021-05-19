@@ -129,12 +129,13 @@ html, body {
 }
 
 // Components styles
-@import 'partials/_avatar.scss';
-@import 'partials/_header.scss';
-@import 'partials/_navbar.scss';
+@import 'partials/_avatar';
+@import 'partials/_header';
+@import 'partials/_navbar';
+@import 'partials/_devit';
 
 // Pages styles
-@import 'partials/_home.scss';
-@import 'partials/_timeline.scss';
-@import 'partials/_login.scss';
-@import 'partials/_register.scss';
+@import 'partials/_home';
+@import 'partials/_timeline';
+@import 'partials/_login';
+@import 'partials/_register';

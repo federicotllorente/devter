@@ -42,7 +42,7 @@ const Home = () => {
 						</>
 					) : (
 						<Avatar
-							userName={user.name} avatarURL={user.avatar}
+							username={user.name} avatarURL={user.avatar}
 							avatarWidth="50" avatarHeight="50"
 						/>
 					)}
